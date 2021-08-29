@@ -1,7 +1,7 @@
 
 //I didn't have much time to work on this, so it doesn't do much yet
 
-;(function (){
+;(() => {
     //styles for notification bubble - most of these are unnecessary
     var notifStyles  = {
         "additiveSymbols": "",
@@ -571,7 +571,7 @@
     };
 
     //function for creating a notification alert
-    var synthNotif = function(){
+    var synthNotif = () => {
         //add the alert element
         $("._4jvfagi").append(
             '<div aria-label="You have a new notification" class="_1bzguq7u"></div>'
@@ -585,7 +585,7 @@
 
     //checks for a notification
     //should return true if there is a unread notif
-    var checkNotif = function(){
+    var checkNotif = () => {
         $("._kphxfbd").click();
         $("._kphxfbd").click();
 
@@ -594,7 +594,7 @@
     }
 
     //update the notifs
-    var updateNotifs = function(){
+    var updateNotifs = () => {
         var notifs = checkNotif();
 
         if(notifs){
