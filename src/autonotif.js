@@ -588,3 +588,26 @@
     var checkNotif = function(){
         $("._kphxfbd").click();
         $("._kphxfbd").click();
+
+        //this is obviously incorrect: 
+        return true;
+    }
+
+    //update the notifs
+    var updateNotifs = function(){
+        var notifs = checkNotif();
+
+        if(notifs){
+            synthNotif();
+        }
+    };
+
+    window.setInterval(updateNotifs, 1000);
+})();
+
+
+
+
+
+
+
