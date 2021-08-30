@@ -2,5 +2,5 @@
   "name": "Ultimate KA Extension",
   "description": "The Ultimate KA Extension adds additional features to the coding enviornments featured in Khan Academy.",
   "version": "1.0",
-  "manifest_version": 3
+  "manifest_version": 2
 }
