@@ -8,4 +8,5 @@ Stuff that got added<br>
 * [ ] Dark Mode
 * [ ] Other Language support
 * [ ] Show Flags
+* [ ] Editor Improvements 
  
