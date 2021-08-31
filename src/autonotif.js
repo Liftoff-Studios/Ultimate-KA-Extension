@@ -645,7 +645,7 @@ function getNotifs(){
                 //Code for stuff
                 $("._1bzguq7u").show();
                 alert("New Notification");
-                fetch("https://www.khanacademy.org/api/internal/user/notifications/clear_brand_new, {
+                fetch("https://www.khanacademy.org/api/internal/user/notifications/clear_brand_new", {
                   "headers": {
                     "accept": "*/*",
                     "sec-fetch-mode": "cors",
