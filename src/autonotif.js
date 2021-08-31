@@ -622,7 +622,7 @@ var notifBlueButtonStylesRaw = "-webkit-box-direction: normal !important;-webkit
 
 var indiNotifBlueStyles = notifBlueButtonStylesRaw.split(";") ;
 for(var i = 0; i <indiNotifBlueStyles.length;i++){
-    var split = indiNotifBlueStyles.split(":")
+    var split = indiNotifBlueStyles[i].split(":")
     $("._1bzguq7u").css(split[0],split[1]);
 };
 
