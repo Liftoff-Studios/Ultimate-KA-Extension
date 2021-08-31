@@ -1,4 +1,7 @@
+/**
 
+
+Pls dont mind. I found an easier method to do this :D
 //I didn't have much time to work on this, so it doesn't do much yet
 
 ;(() => {
@@ -604,10 +607,36 @@
 
     window.setInterval(updateNotifs, 1000);
 })();
+***/
 
 
 
+/**Another Method (Easier)*/
 
+import fkey from "https://raw.githubusercontent.com/Liftoff-KA/Ultimate-KA-Extension/main/src/main.js";
 
+function getNotifs(){
+    fetch("https://www.khanacademy.org/api/internal/user/notifications/readable?casing=camel", {
+      "headers": {
+        "accept": "*/*",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-ka-fkey": fkey
+      },
+      "referrer": window.location.href,
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "body": null,
+      "method": "GET",
+      "mode": "cors",
+      "credentials": "include"
+    }).then(response=>response.json()).then(data=>{
 
+        for(var i = 0; i<data.notifications.length; i++){
+            if(data.notifications[i].brandNew == true){
+                //Code for stuff
+            }
+        };
+    });
 
+};
+window.setInterval(5000,getNotifs)
