@@ -648,10 +648,24 @@ function getNotifs(){
             if(data.notifications[i].brandNew == true){
                 //Code for stuff
                 $("._1bzguq7u").show();
-                alert("New Notification")
+                alert("New Notification");
+                fetch("https://www.khanacademy.org/api/internal/user/notifications/clear_brand_new, {
+                  "headers": {
+                    "accept": "*/*",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-origin",
+                    "x-ka-fkey": fkey
+                  },
+                  "referrer": window.location.href,
+                  "referrerPolicy": "strict-origin-when-cross-origin",
+                  "body": null,
+                  "method": "POST",
+                  "mode": "cors",
+                  "credentials": "include"
+                });
             }
         };
     });
 
 };
-window.setInterval(5000,getNotifs);
+window.setInterval(getNotifs,5000);
