@@ -615,6 +615,19 @@ Pls dont mind. I found an easier method to do this :D
 
 import fkey from "https://raw.githubusercontent.com/Liftoff-KA/Ultimate-KA-Extension/main/src/main.js";
 
+$("._4jvfagi").append("<div class='_1bzguq7u' aria-label = 'You have a new notification'></div>");
+$("._1bzguq7u").hide();
+
+var notifBlueButtonStylesRaw = "-webkit-box-direction: normal !important;-webkit-box-orient: vertical !important;-webkit-box-align: stretch !important;-ms-flex-align: stretch !important;-webkit-align-items: stretch !important;align-items: stretch !important;border-width: 0px !important;border-style: solid !important;-moz-box-sizing: border-box !important;box-sizing: border-box !important;-webkit-flex-direction: column !important;-ms-flex-direction: column !important;flex-direction: column !important;margin: 0px !important;padding: 0px !important;z-index: 0 !important;min-height: 0px !important;min-width: 0px !important;display: -webkit-inline-box !important;display: -moz-inline-box !important;display: -ms-inline-flexbox !important;display: -webkit-inline-flex !important;display: inline-flex !important;background-color: #1865f2 !important;border-radius: 50% !important;height: 16px !important;width: 16px !important;position: absolute !important;right: -10px !important;top: -7px !important;";
+
+var indiNotifBlueStyles = notifBlueButtonStylesRaw.split(";") ;
+for(var i = 0; i <indiNotifBlueStyles.length;i++){
+    var split = indiNotifBlueStyles.split(":")
+    $("._1bzguq7u").css(split[0],split[1]);
+};
+
+
+
 function getNotifs(){
     fetch("https://www.khanacademy.org/api/internal/user/notifications/readable?casing=camel", {
       "headers": {
@@ -634,9 +647,11 @@ function getNotifs(){
         for(var i = 0; i<data.notifications.length; i++){
             if(data.notifications[i].brandNew == true){
                 //Code for stuff
+                $("._1bzguq7u").show();
+                alert("New Notification")
             }
         };
     });
 
 };
-window.setInterval(5000,getNotifs)
+window.setInterval(5000,getNotifs);
