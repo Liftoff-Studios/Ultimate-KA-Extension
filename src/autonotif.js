@@ -1,7 +1,7 @@
 
 /**Method (Easier)*/
 
-import fkey from "https://raw.githubusercontent.com/Liftoff-KA/Ultimate-KA-Extension/main/src/main.js";
+//import fkey from "https://raw.githubusercontent.com/Liftoff-KA/Ultimate-KA-Extension/main/src/main.js";
 
 
 
@@ -14,41 +14,45 @@ $("._1bzguq7u").hide();
 
 function getNotifs(){
     fetch("https://www.khanacademy.org/api/internal/user/notifications/readable?casing=camel", {
-      "headers": {
-        "accept": "*/*",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "x-ka-fkey": fkey
-      },
-      "referrer": window.location.href,
-      "referrerPolicy": "strict-origin-when-cross-origin",
-      "body": null,
-      "method": "GET",
-      "mode": "cors",
-      "credentials": "include"
-    }).then(response=>response.json()).then(data=>{
+            "headers": {
+            "accept": "*/*",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "x-ka-fkey": fkey
+        },
+        "referrer": window.location.href,
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "body": null,
+        "method": "GET",
+        "mode": "cors",
+        "credentials": "include"
+    }).then(response => response.json()).then(data => {
+        var notif = false;
+        for(var i = 0; i < data.notifications.length; i++){
+            notif = (data.notifications[i].brandNew == true) || notif;
+        }
 
-        for(var i = 0; i<data.notifications.length; i++){
-            if(data.notifications[i].brandNew == true){
-                //Code for stuff
-                $("._1bzguq7u").show();
-                alert("New Notification");
-                fetch("https://www.khanacademy.org/api/internal/user/notifications/clear_brand_new", {
-                  "headers": {
+        if(notif){
+            //Code for stuff
+            $("._1bzguq7u").show();
+            alert("New Notification");
+            fetch("https://www.khanacademy.org/api/internal/user/notifications/clear_brand_new", {
+                "headers": {
                     "accept": "*/*",
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "same-origin",
                     "x-ka-fkey": fkey
-                  },
-                  "referrer": window.location.href,
-                  "referrerPolicy": "strict-origin-when-cross-origin",
-                  "body": null,
-                  "method": "POST",
-                  "mode": "cors",
-                  "credentials": "include"
-                });
-            }
-        };
+                },
+                "referrer": window.location.href,
+                "referrerPolicy": "strict-origin-when-cross-origin",
+                "body": null,
+                "method": "POST",
+                "mode": "cors",
+                "credentials": "include"
+            });
+        } else {
+            $("._1bzguq7u").hide();
+        }
     });
 
 };

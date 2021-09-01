@@ -7,4 +7,3 @@ for (var i = 0; i < x.length; i++) {
     }
 };
 
-export var fkey;
