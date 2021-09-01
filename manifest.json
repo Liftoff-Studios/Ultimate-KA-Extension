@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "permissions": [
     "cookies",
-    "*://www.khanacademy.org/*/*",
+    "*://www.khanacademy.org/*",
   ],
 }
 
