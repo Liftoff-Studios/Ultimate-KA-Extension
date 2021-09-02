@@ -10,7 +10,7 @@ if(num_array.includes(window.location.href.split("/")[5])){
     auto_save.style.cursor = "pointer";
     auto_save.style.fontSize = "15px";
     auto_save.style.backgroundColor = "white";
-    auto_save.innerHTML = "Enable Autosave";
+    auto_save.innerHTML = "AS";
     auto_save.style.border = "1px black solid";
     auto_save.style.height = "40px";
     auto_save.style.display = "inline-flex";
@@ -29,7 +29,8 @@ if(num_array.includes(window.location.href.split("/")[5])){
             document.getElementsByClassName("_l7iimjv")[0].click();
         },5000);
     };
-
+    auto_save.setAttribute("title","Enable Autosave");
+  
     document.getElementsByClassName("_3sp6y9x")[0].appendChild(auto_save)
 
     $(".autosave123").hover(function() {
