@@ -6,7 +6,8 @@ import fkey from "https://raw.githubusercontent.com/Liftoff-KA/Ultimate-KA-Exten
 var num_array = ["1","2","3","4","5","6","7","8","9","0"];
 
 //This if statement is required to seperate the individual functions for pages. It will become important later
-if(num_array.includes(window.location.href.split("/")[5])){
+for(var i =0;i<num_array.length;i++){
+    if(window.location.href.split("/")[5].includes(num_array[i])){
     
     var unvote_button = document.createElement("BUTTON");
     unvote_button.style.color = "#1865f2";
@@ -93,7 +94,7 @@ if(num_array.includes(window.location.href.split("/")[5])){
 
             });
 
-
+            break;
     };
 
     
