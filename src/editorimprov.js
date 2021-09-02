@@ -4,7 +4,9 @@
 var num_array = ["1","2","3","4","5","6","7","8","9","0"];
 
 //This if statement is required to seperate the individual functions for pages. It will become important later
-if(num_array.includes(window.location.href.split("/")[5])){
+
+for(var i =0;i<num_array.length;i++){
+    if(num_array[i].includes(window.location.href.split("/")[5])){
   var auto_save = document.createElement("BUTTON");
     auto_save.style.color = "#1865f2";
     auto_save.style.cursor = "pointer";
@@ -49,5 +51,9 @@ if(num_array.includes(window.location.href.split("/")[5])){
         auto_save.style.paddingLeft = "14px";
         auto_save.style.paddingRight = "14px";
     })
-  
+    break;
 }
+    
+};
+
+
