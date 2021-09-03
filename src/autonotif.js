@@ -56,4 +56,7 @@ function getNotifs(){
     });
 
 };
-window.setInterval(getNotifs,5000);
+
+document.addEventListener("load", () => {
+    window.setInterval(getNotifs, 5000);
+});
